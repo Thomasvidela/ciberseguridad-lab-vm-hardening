@@ -1,42 +1,52 @@
-# Laboratorio de Despliegue y Hardening de Máquina Virtual (Ubuntu Desktop)
+## 📸 Evidencias del Proceso
 
-Este repositorio documenta la configuración inicial, aislamiento y aseguramiento básico (*hardening*) de una máquina virtual sobre Oracle VirtualBox, destinada a entornos de laboratorio de ciberseguridad.
+### 1. Configuración de Hardware
+Asignación de recursos moderados (2 vCPUs, memoria RAM optimizada y memoria de video dedicada con aceleración gráfica)[cite: 1, 4, 5, 6].
 
----
+<p align="center">
+  <img src="evidencia/cpu_config.png" alt="Configuración de CPU" width="85%">
+</p>
 
-## 🛠️ Especificaciones del Entorno
+<p align="center">
+  <img src="evidencia/placa_base_config.png" alt="Configuración de Placa Base y Memoria RAM" width="85%">
+</p>
 
-* **Hipervisor:** Oracle VM VirtualBox
-* **Sistema Operativo Guest:** Ubuntu Desktop 26.04 LTS (x86_64)
-* **Recursos asignados:**
-  * **vCPU:** 2 núcleos
-  * **RAM:** 4096 MB (4 GB)
-  * **Memoria de video:** 128 MB (Controlador VBoxSVGA)
-  * **Disco Virtual:** 25 GB (Almacenamiento dinámico)
-  * **Red:** Modo NAT (Aislamiento básico del host y red externa)
-
----
-
-## 📋 Justificación de Decisiones Técnicas
-
-1. **Elección del Sistema Operativo (Ubuntu Desktop):** Proporciona un entorno Linux robusto, seguro y ampliamente utilizado en auditorías y laboratorios de ciberseguridad.
-2. **Dimensionamiento de Recursos:** Se asignaron 4 GB de RAM y 2 vCPUs para garantizar estabilidad durante la descompresión de paquetes y el uso de herramientas de análisis sin degradar el rendimiento de la máquina anfitriona.
-3. **Controlador Gráfico (VBoxSVGA):** Se seleccionó el controlador nativo de VirtualBox con 128 MB de VRAM para evitar incompatibilidades del kernel con drivers genéricos (`vmwgfx`) y permitir un escalado visual fluido.
-4. **Aislamiento de Red (NAT):** Se estableció el adaptador en modo NAT para permitir salida a internet (descarga de paquetes y parches) evitando que la máquina virtual sea accesible directamente desde la red local o que exponga puertos hacia el exterior.
-5. **Generación de Snapshot:** Se creó una instantánea limpia una vez asegurado el sistema, permitiendo restablecer el entorno base ante cualquier fallo o ejecución de pruebas destructivas.
+<p align="center">
+  <img src="evidencia/gpu_config.png" alt="Configuración de Pantalla y Video" width="85%">
+</p>
 
 ---
 
-## 🚀 Pasos Realizados
+### 2. Aislamiento de Red (Modo NAT)
+Configuración previa al primer encendido estableciendo el adaptador en modo NAT para garantizar el aislamiento de la red física local[cite: 1, 7].
 
-### 1. Creación e Instalación de la VM
-* Configuración manual del entorno en VirtualBox deshabilitando la instalación desatendida para tener control del particionado y credenciales.
-* Instalación del sistema base con creación del usuario de trabajo principal.
-* Desmontaje de la imagen ISO tras el reinicio para asegurar el arranque desde el disco duro virtual.
+<p align="center">
+  <img src="evidencia/red_config.png" alt="Configuración de Red en Modo NAT" width="85%">
+</p>
 
-### 2. Hardening Básico del Sistema
-Una vez iniciado el sistema operativo, se ejecutaron las siguientes tareas de aseguramiento desde la terminal:
+---
 
-* **Actualización del sistema y dependencias:**
-  ```bash
-  sudo apt update && sudo apt upgrade -y
+### 3. Despliegue del Sistema Operativo
+Inicio y validación de la sesión en Ubuntu Desktop con el usuario de trabajo configurado[cite: 1].
+
+<p align="center">
+  <img src="evidencia/screen_2.png" alt="Sistema Operativo Instalado" width="85%">
+</p>
+
+---
+
+### 4. Hardening Básico
+Aplicación de medidas básicas de aseguramiento: actualización de repositorios y paquetes, auditoría de puertos/servicios y activación del firewall UFW[cite: 1].
+
+<p align="center">
+  <img src="evidencia/screen_1.png" alt="Hardening Básico y Firewall" width="85%">
+</p>
+
+---
+
+### 5. Snapshot del Sistema Base
+Creación del punto de restauración indispensable en VirtualBox para preservar el estado limpio y seguro de la máquina[cite: 1].
+
+<p align="center">
+  <img src="evidencia/snapshoot.png" alt="Snapshot Creado en VirtualBox" width="85%">
+</p>
