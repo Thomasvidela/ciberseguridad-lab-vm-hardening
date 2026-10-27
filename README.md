@@ -1,7 +1,7 @@
 ## 📸 Evidencias del Proceso
 
 ### 1. Configuración de Hardware
-Asignación de recursos moderados (2 vCPUs, memoria RAM optimizada y memoria de video dedicada con aceleración gráfica)[cite: 1, 4, 5, 6].
+Asignación de recursos moderados (2 vCPUs, memoria RAM optimizada y memoria de video dedicada con aceleración gráfica).
 
 <p align="center">
   <img src="evidencia/cpu_config.png" alt="Configuración de CPU" width="85%">
@@ -18,7 +18,7 @@ Asignación de recursos moderados (2 vCPUs, memoria RAM optimizada y memoria de 
 ---
 
 ### 2. Aislamiento de Red (Modo NAT)
-Configuración previa al primer encendido estableciendo el adaptador en modo NAT para garantizar el aislamiento de la red física local[cite: 1, 7].
+Configuración previa al primer encendido estableciendo el adaptador en modo NAT para garantizar el aislamiento de la red física local.
 
 <p align="center">
   <img src="evidencia/red_config.png" alt="Configuración de Red en Modo NAT" width="85%">
@@ -27,7 +27,7 @@ Configuración previa al primer encendido estableciendo el adaptador en modo NAT
 ---
 
 ### 3. Despliegue del Sistema Operativo
-Inicio y validación de la sesión en Ubuntu Desktop con el usuario de trabajo configurado[cite: 1].
+Inicio y validación de la sesión en Ubuntu Desktop con el usuario de trabajo configurado.
 
 <p align="center">
   <img src="evidencia/screen_2.png" alt="Sistema Operativo Instalado" width="85%">
@@ -36,7 +36,7 @@ Inicio y validación de la sesión en Ubuntu Desktop con el usuario de trabajo c
 ---
 
 ### 4. Hardening Básico
-Aplicación de medidas básicas de aseguramiento: actualización de repositorios y paquetes, auditoría de puertos/servicios y activación del firewall UFW[cite: 1].
+Aplicación de medidas básicas de aseguramiento: actualización de repositorios y paquetes, auditoría de puertos/servicios y activación del firewall UFW.
 
 <p align="center">
   <img src="evidencia/screen_1.png" alt="Hardening Básico y Firewall" width="85%">
@@ -45,7 +45,7 @@ Aplicación de medidas básicas de aseguramiento: actualización de repositorios
 ---
 
 ### 5. Snapshot del Sistema Base
-Creación del punto de restauración indispensable en VirtualBox para preservar el estado limpio y seguro de la máquina[cite: 1].
+Creación del punto de restauración indispensable en VirtualBox para preservar el estado limpio y seguro de la máquina.
 
 <p align="center">
   <img src="evidencia/snapshoot.png" alt="Snapshot Creado en VirtualBox" width="85%">
