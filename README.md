@@ -44,9 +44,30 @@ Aplicación de medidas básicas de aseguramiento: actualización de repositorios
 
 ---
 
-### 5. Snapshot del Sistema Base
-Creación del punto de restauración indispensable en VirtualBox para preservar el estado limpio y seguro de la máquina.
+### 5. Usuario sin privilegios
+
+Creación de un usuario estándar (sin permisos de administrador) y listado de los usuarios del sistema.
 
 <p align="center">
-  <img src="evidencia/snapshoot.png" alt="Snapshot Creado en VirtualBox" width="85%">
+  <img src="evidencia/usuarios.png" alt="Creación y listado de usuarios" width="85%">
+</p>
+
+---
+
+### 6. Actualización del sistema
+
+Ejecución de `apt update` y `apt upgrade` sin errores, con confirmación de que no quedan paquetes pendientes.
+
+<p align="center">
+  <img src="evidencia/actualizacion.png" alt="Actualización de paquetes" width="85%">
+</p>
+
+---
+
+### 7. Snapshot "Hardening Inicial"
+
+Creación del punto de restauración en VirtualBox para preservar el estado limpio y seguro de la máquina, con el usuario estándar creado y el sistema actualizado.
+
+<p align="center">
+  <img src="evidencia/snapshoot.png" alt="Snapshot Hardening Inicial en VirtualBox" width="85%">
 </p>
